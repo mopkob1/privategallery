@@ -1,0 +1,13 @@
+{% extends layout_template  %}
+
+{% block title %}{{ interface('emailconfirmsent') }}{% endblock %}
+
+{% block content %}
+
+    <h1>{{ interface('thankyou') }}!</h1>
+
+    <p>{{ interface('emailsent_1') }} <strong>{{ email }}</strong>.</p>
+
+    <p>{{ interface('clicklinktoconfirm') }}</p>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{#
+Template for an email message sent to confirm an email address.
+Variables passed to this template:
+    user: The SimpleUser\User instance.
+    confirmationUrl: The link to click to complete the confirmation process.
+#}
+
+{# The subject line. #}
+{%- block subject -%}{%- autoescape false -%}
+{{ interface('email.confirm_1') }}
+{%- endautoescape -%}{%- endblock -%}
+
+{# The plain text message. #}
+{%- block body_text -%}{%- autoescape false -%}
+
+{{ interface('email.confirm_2') }}
+
+{{ interface('email.confirm_3') }}
+{{ confirmationUrl }}
+
+{%- endautoescape -%}{%- endblock -%}
+
+{# The HTML message. Optional. #}
+{%- block body_html -%}
+
+    <h1>{{ interface('email.confirm_2') }}</h1>
+
+    <p>
+        {{ interface('email.confirm_4') }} <a href="{{ confirmationUrl }}">{{ interface('email.confirm_5') }}</a>.
+    </p>
+
+{%- endblock -%}

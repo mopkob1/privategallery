@@ -1,0 +1,62 @@
+{% extends layout_template  %}
+
+{% block title %}{{ interface('login') }}{% endblock %}
+
+{% block content %}
+
+    {% if app.user %}
+        <p>{{ interface('hello') }}, {{ app.user.displayName }}.</p>
+        <p><a href="{{ path('user.logout') }}">{{ interface('logout') }}</a></p>
+
+    {% else %}
+        <h1>
+            {{ interface('login') }}
+        </h1>
+
+        <p class="text-muted lead">
+            {{ interface('noaccount') }} <a href="{{ path('user.register') }}">{{ interface('letsreg') }}</a>
+        </p>
+
+        {% if error %}
+            <div class="alert alert-danger">{{ error|nl2br }}</div>
+        {% endif %}
+
+        <form class="form-horizontal" method="POST" action="{{ path('user.login_check') }}">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="inputEmail">{{ interface('email') }}</label>
+                <div class="col-sm-6">
+                    <input class="form-control" name="_username" type="text" id="inputEmail" placeholder="{{ interface('email') }}" required value="{{ last_username }}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="inputPassword">{{ interface('password') }}</label>
+                <div class="col-sm-6">
+                    <input class="form-control" name="_password" type="password" id="inputPassword" required placeholder="{{ interface('password') }}">
+                </div>
+            </div>
+
+            {% if allowRememberMe %}
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-2 checkbox">
+                        <label>
+                            <input type="checkbox" name="_remember_me" value="true" checked> {{ interface('rememberme') }}
+                        </label>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <button type="submit" class="btn btn-primary">{{ interface('login') }}</button>
+                    {% if allowPasswordReset %}
+                        <a style="margin-left: 10px;" href="{{ path('user.forgot-password') }}">{{ interface('forgotpass') }}</a>
+                    {% endif %}
+                </div>
+            </div>
+
+        </form>
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,78 @@
+{% set conf = {"lang" : "ru",
+                "charset" : "utf-8"} %}
+{% set navbarheader = {"navbar-toggle.sr-only" : "Переключить навигацию",
+                        "navbar-brand" : "Главная"} %}
+{% set navbarcollapse = {"navbar-nav.a" : "Список пользователей",
+                            "navbar-nav.dropdown-toggle" : "Привет",
+                            "navbar-nav.dropdown-menu.glyphicon-user" : "Посмотреть профиль",
+                            "navbar-nav.dropdown-menu.glyphicon-edit" : "Редактировать профиль",
+                            "navbar-nav.dropdown-menu.glyphicon-off" : "Выйти",
+                            "navbar-nav.else.a1" : "Войти",
+                            "navbar-nav.else.a2" : "Новый пользователь"}%}
+
+<!DOCTYPE html>
+<html lang="{{ interface('lang') }}">
+    <head>
+        <meta charset="{{ interface('charset') }}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title '' %}</title>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">{{ interface('navbar-toggle') }}</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">{{ interface('mainpage') }}</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ path('user.list') }}">{{ interface('listuser') }}</a></li>
+                        {% if app.user %}
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    {{ interface('hello') }}, {{ app.user.displayName }}!
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ path('user') }}"><span class="glyphicon glyphicon-user"></span>
+                                            {{ interface('viewuser') }}</a></li>
+                                    <li><a href="{{ path('user.edit', { id: app.user.id }) }}"><span class="glyphicon glyphicon-edit"></span>
+                                            {{ interface('edituser') }}</a></li>
+                                    <li><a href="{{ path('user.logout') }}"><span class="glyphicon glyphicon-off"></span>
+                                            {{ interface('logout') }}</a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li><a href="{{ path('user.login') }}">{{ interface('login') }}</a></li>
+                            <li><a href="{{ path('user.register') }}">{{ interface('newuser') }}</a></li>
+                        {% endif %}
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="container">
+            {% if app.session.flashbag.has('alert') %}
+                {% for flashMessage in app.session.flashbag.get('alert') %}
+                    <div class="alert alert-info">{{ flashMessage }}</div>
+                {% endfor %}
+            {% endif %}
+
+            {% block content %}{% endblock %}
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </body>
+</html>
