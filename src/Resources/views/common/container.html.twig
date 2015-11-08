@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>
+        {% block container_head %}Заголовок{% endblock %}
+    </h1>
+    <blockquote>
+        {% block container_text %}
+            <p>Bootstrap Image Gallery is an extension to <a href="https://blueimp.github.io/Gallery/">blueimp Gallery</a>, a touch-enabled, responsive and customizable image &amp; video gallery.<br>It displays images and videos in the modal dialog of the <a href="http://getbootstrap.com/">Bootstrap</a> framework, features swipe, mouse and keyboard navigation, transition effects, fullscreen support and on-demand content loading and can be extended to display additional content types.</p>
+            <p>и еще фигня</p>
+        {% endblock %}
+    </blockquote>
+    <form class="form-inline">
+        {% block container_toolbar %}{% endblock %}
+    </form>
+    <br>
+    <!-- The container for the list of example images -->
+    {% block container_zone %}<div id="links"></div>{% endblock %}
+    <br>
+</div>

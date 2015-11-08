@@ -1,0 +1,19 @@
+<!-- DropDown menu -->
+<li class="{{ dropdown_menu_class_li }}">
+    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+        {{ main_menu_url }}
+    </a>
+    <ul class="{{ dropdown_menu_class_ul }}">
+        {% for item, key in items %}
+            {% if 'http://' in key %}
+                {% set href=key %}
+            {% elseif 'https://' in key %}
+                {% set href=key %}
+            {% else %}
+                {% set href=url(key) %}
+            {% endif %}
+            <li><a href="{{ href }}">{{ item }}</a></li>
+        {% endfor %}
+    </ul>
+</li>
+<!-- End DropDown menu -->

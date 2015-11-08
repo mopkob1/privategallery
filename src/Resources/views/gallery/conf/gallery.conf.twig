@@ -1,0 +1,12 @@
+{% extends "common\\gallery.html.twig" %}
+
+{% set buttons=[
+    {'caption':interface('buttons.previous'),'id':'','type':'btn-default pull-left prev','icon':'glyphicon-chevron-left','size':''},
+    {'caption':interface('buttons.next'),'id':'','type':'btn-primary next','icon':'glyphicon-chevron-right','size':'','oposite':'jkskjd'}
+]%}
+
+{% block gallery_buttons %}
+    {% for button in buttons %}
+        {% include "common\\elements\\button.html.twig" %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+<!-- Single menu -->
+<li class="{{ single_menu_class }}">
+    {% if 'http://' in main_menu_name %}
+        {% set href=main_menu_name %}
+    {% elseif 'https://' in main_menu_name %}
+        {% set href=main_menu_name %}
+    {% else %}
+        {% set href=url(main_menu_name) %}
+    {% endif %}
+    <a href="{{ href }}">{{ main_menu_url }}</a>
+</li>
+<!-- End Single menu -->

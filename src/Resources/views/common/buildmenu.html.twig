@@ -1,0 +1,15 @@
+{% set main_menu_url='test' %}
+{% set main_menu_name='test' %}
+
+{% set single_menu_class="" %}
+{% set dropdown_menu_class_li="" %}
+{% set dropdown_menu_class_ul="" %}
+
+{% for main_menu_url, main_menu_name in menu() %}
+    {% if main_menu_name is iterable %}
+        {% set items=main_menu_name %}
+        {% include "common\\elements\\dropdownmenu.html.twig" %}
+    {% else %}
+        {% include "common\\elements\\singlemenu.html.twig" %}
+    {% endif %}
+{% endfor %}

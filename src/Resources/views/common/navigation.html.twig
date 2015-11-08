@@ -1,0 +1,19 @@
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-fixed-top .navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {% block navigation_brand %}
+                <a class="navbar-brand" href="{{ url('main') }}">iPhone Gallery View</a>
+            {% endblock %}
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                {% include "common\\buildmenu.html.twig" %}
+            </ul>
+        </div>
+    </div>
+</div>

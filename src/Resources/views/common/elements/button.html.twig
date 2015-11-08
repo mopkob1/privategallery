@@ -1,0 +1,9 @@
+<button id="{{ button.id }}" type="button" class="btn {{ button.size }} {{ button.type }}">
+    {% if button.oposite is defined %}
+        {{ button.caption }}
+        <i class="glyphicon {{ button.icon }}"></i>
+    {% else %}
+        <i class="glyphicon {{ button.icon }}"></i>
+        {{ button.caption }}
+    {% endif %}
+</button>

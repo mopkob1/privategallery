@@ -1,5 +1,8 @@
-{% extends "layout.html.twig" %}
+{% extends "gallery\\layout.html.twig" %}
 
 {% block content %}
-    Welcome to your new Silex Application!
+    {% include "gallery\\conf\\navigation.conf.twig" %}
+    {% include "gallery\\conf\\container.conf.twig" %}
+    {% include "gallery\\conf\\gallery.conf.twig" %}
 {% endblock %}
+

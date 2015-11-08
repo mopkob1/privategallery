@@ -1,0 +1,16 @@
+<div class="btn-group" data-toggle="buttons">
+    {% for checkbox in checkboxgroup %}
+        <label class="btn {{ checkbox.size }} {{ checkbox.type }}">
+
+            {% if checkbox.oposite is defined %}
+                <input id="{{ checkbox.id }}" type="checkbox">{{ checkbox.caption }}
+                <i class="glyphicon {{ checkbox.icon }}"></i>
+            {% else %}
+                <i class="glyphicon {{ checkbox.icon }}"></i>
+                <input id="{{ checkbox.id }}" type="checkbox">{{ checkbox.caption }}
+            {% endif %}
+
+        </label>
+    {% endfor %}
+</div>
+

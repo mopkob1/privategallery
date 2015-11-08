@@ -6,6 +6,14 @@
  * Time: 16:49
  */
 $ru=array(
+    'buttons.next'=>'Следующий',
+    'buttons.previous'=>'Предыдущий',
+    'buttons.fullscreen'=>'На весь экран',
+    'buttons.borderless'=>'Без рамки',
+    'buttons.launchimagegal'=>'Запуск фотогалерееи',
+    'buttons.launchvideogal'=>'Запуск видеогалерееи',
+
+
     'lang' => 'ru',
     'charset' => 'utf-8',
     'navbar-toggle' => "Переключить навигацию",
@@ -148,5 +156,12 @@ $en=array(
     'repassword'=>'Re-type password',
     'forgotpass_q'=>'Forgot your password?',
     'enteremail'=>"Enter your email address below and we'll send you password reset instructions.",
+    'buttons.next'=>'Next',
+    'buttons.previous'=>'Previous',
+    'buttons.fullscreen'=>'Fullscreen',
+    'buttons.borderless'=>'Borderless',
+    'buttons.launchimagegal'=>'Launch Image Gallery',
+    'buttons.launchvideogal'=>'Launch Video Gallery',
+
 );
 return array('ru' => $ru, 'en' => $en);

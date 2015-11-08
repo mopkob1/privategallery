@@ -1,0 +1,24 @@
+{% extends "common\\container.html.twig" %}
+
+{% set buttons=[
+    {'caption': interface('buttons.launchvideogal'),'id':'video-gallery-button','type':'btn-success','icon':'glyphicon-film','size':'btn-lg','oposite':'jkskjd'},
+    {'caption': interface('buttons.launchimagegal'),'id':'image-gallery-button','type':'btn-primary','icon':'glyphicon-picture','size':'btn-lg'},
+]%}
+
+{% set checkboxgroup=[
+    {'caption': interface('buttons.borderless'),'id':'borderless-checkbox','type':'btn-success','icon':'glyphicon-leaf','size':'btn-lg'},
+    {'caption': interface('buttons.fullscreen'),'id':'fullscreen-checkbox','type':'btn-primary','icon':'glyphicon-fullscreen','size':'btn-lg','oposite':'jkskjd'}
+]%}
+
+{% block container_head %}Заголовок1{% endblock %}
+
+{% block container_text %}
+    <p>Какой-то рассказ о галерее...</p>
+{% endblock %}
+
+{% block container_toolbar %}
+    {% include "common\\elements\\buttons.html.twig" %}
+    {% include "common\\elements\\checkboxgroup.html.twig" %}
+{% endblock %}
+
+{% block container_zone %}<div id="links"></div>{% endblock %}
