@@ -22,7 +22,7 @@
         "symfony/twig-bridge": "~2.3",
         "symfony/validator": "~2.3",
         "jasongrimes/silex-simpleuser" : "*",
-	"miljar/php-exif": "~0.5.0"
+	    "miljar/php-exif": "~0.5.0"
 
     },
     "autoload": {
