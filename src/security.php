@@ -1,6 +1,8 @@
 <?php
 use Providers\UserProvider;
 
+$interface = require 'translation.php';
+
 $app['user.options'] = array(
     'templates' => array(
         'layout' => 'usermanager\layout.twig',
@@ -14,7 +16,7 @@ $app['user.options'] = array(
         'edit' => 'usermanager\edit.twig',
         'list' => 'usermanager\list.twig',
     ),
-    'interface.strings' => require_once 'translation.php'
+    'interface.strings' => $interface,
 );
 
 $app->mount('/user',$sup);         //монтирует все роуты разом.

@@ -86,7 +86,8 @@ $ru=array(
     'email.confirm_3'=>"Пожалуйста, перейдите по ссылке ниже, чтобы подтвердить Вашу электронную почту:",
     'email.confirm_4'=>"Пожалуйста",
     'email.confirm_5'=>"перейдите для подтвеждения адреса электронной почты",
-
+    'app_name' => 'Private Gallery',
+    'version' => '1.0.1',
 );
 
 //$en=$ru;
@@ -162,6 +163,8 @@ $en=array(
     'buttons.borderless'=>'Borderless',
     'buttons.launchimagegal'=>'Launch Image Gallery',
     'buttons.launchvideogal'=>'Launch Video Gallery',
+    'app_name' => 'Private Gallery',
+    'version' => $ru['version'],
 
 );
 return array('ru' => $ru, 'en' => $en);

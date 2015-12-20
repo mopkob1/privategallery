@@ -12,6 +12,8 @@ use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\RememberMeServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
 use SimpleUser\UserServiceProvider;
+use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
+
 
 $app = new Application();
 $app->register(new SessionServiceProvider());           // Обязательно для Simple-User
@@ -27,5 +29,8 @@ $app->register(new RememberMeServiceProvider());        // Обязательн�
 $app->register(new SwiftmailerServiceProvider());       // Обязательно для Simple-User
 
 $app->register($sup=new UserServiceProvider());
+
+$ormopt=require 'db.php';
+$app->register(new DoctrineOrmServiceProvider(),$ormopt);
 
 return $app;

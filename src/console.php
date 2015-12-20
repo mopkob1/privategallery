@@ -6,7 +6,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-$console = new Application('My Silex Application', 'n/a');
+$locale=$app['locale'];
+$options=$app['user.options'];
+$app_name=$options['interface.strings'][$locale]['app_name'];
+$ver=isset($options['interface.strings'][$locale]['version']) ? $options['interface.strings'][$locale]['version'] : "n/a";
+
+$console = new Application($app_name, $ver);
 $console->getDefinition()->addOption(new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev'));
 $console->setDispatcher($app['dispatcher']);
 $console
@@ -19,5 +24,9 @@ $console
         // do something
     })
 ;
+
+require __DIR__ . '/../config/cli-config.php';
+$console->setHelperSet($helpers);
+$console->addCommands($commands);
 
 return $console;
