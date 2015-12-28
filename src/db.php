@@ -3,9 +3,9 @@ return array(
     'db.options'=> array(
         'driver'   => 'pdo_mysql',
         'host'     => 'localhost',
-        'dbname'   => 'silex1',
-        'user'     => 'silex1',
-        'password' => 'vjbltymub',
+        'dbname'   => 'silex',
+        'user'     => 'root',
+        'password' => 'ldpa$$',
     ),
     "orm.proxies_dir"=> __DIR__ . "/../var/cache/orm/proxy",
     "orm.proxies_namespace" => "DoctrineProxy",
@@ -23,8 +23,9 @@ return array(
             // Using actual filesystem paths
             array(
                 "type" => "simple_yml",
-                "namespace" => "Entities",
-                "path" => __DIR__."/Entities",
+                "namespace" => 'Entities',
+                //"path" => __DIR__."/Entities",
+                "path" => __DIR__."/Resources/config",
             ),
         ),
     ),
