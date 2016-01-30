@@ -1,0 +1,22 @@
+Entities\Log:
+    type: entity
+    table: log
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        adate:
+            type: date
+        atime:
+            type: time
+        adatetime:
+            type: datetime
+        operation:
+            type: string
+            length: 100
+        isdel:
+            type: boolean
+
+        #refuser:
+        #refobject:

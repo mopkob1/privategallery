@@ -1,5 +1,4 @@
 <?php
-
 $em = $app['orm.em'];
 
 $helpers= new Symfony\Component\Console\Helper\HelperSet(array(
@@ -12,7 +11,19 @@ $commands=array(
     // DBAL Commands
     new \Doctrine\DBAL\Tools\Console\Command\RunSqlCommand(),
     new \Doctrine\DBAL\Tools\Console\Command\ImportCommand(),
-
+    // own Commands
+    new ownCommands\toCreateEntities(),
+    new ownCommands\toReadEntities(),
+    new ownCommands\OTObiCreate(),
+    new ownCommands\OTObiRead(),
+    new ownCommands\OTOuniCreate(),
+    new ownCommands\OTOuniRead(),
+    new ownCommands\OTMbiCreate(),
+    new ownCommands\OTMbiRead(),
+    new ownCommands\MTMbiCreate(),
+    new ownCommands\MTMbiRead(),
+    new ownCommands\asovrCreate(),
+    new ownCommands\asovrRead(),
 
     // ORM Commands
 

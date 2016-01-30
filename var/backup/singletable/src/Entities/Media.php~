@@ -1,0 +1,200 @@
+<?php
+
+namespace Entities;
+
+/**
+ * Media
+ */
+class Media
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $path;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string
+     */
+    private $mediatype;
+
+    /**
+     * @var boolean
+     */
+    private $isdel;
+
+    /**
+     * @var boolean
+     */
+    private $usesource;
+
+    /**
+     * @var \Entities\Media
+     */
+    private $refmedia;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     *
+     * @return Media
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Media
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set mediatype
+     *
+     * @param string $mediatype
+     *
+     * @return Media
+     */
+    public function setMediatype($mediatype)
+    {
+        $this->mediatype = $mediatype;
+
+        return $this;
+    }
+
+    /**
+     * Get mediatype
+     *
+     * @return string
+     */
+    public function getMediatype()
+    {
+        return $this->mediatype;
+    }
+
+    /**
+     * Set isdel
+     *
+     * @param boolean $isdel
+     *
+     * @return Media
+     */
+    public function setIsdel($isdel)
+    {
+        $this->isdel = $isdel;
+
+        return $this;
+    }
+
+    /**
+     * Get isdel
+     *
+     * @return boolean
+     */
+    public function getIsdel()
+    {
+        return $this->isdel;
+    }
+
+    /**
+     * Set usesource
+     *
+     * @param boolean $usesource
+     *
+     * @return Media
+     */
+    public function setUsesource($usesource)
+    {
+        $this->usesource = $usesource;
+
+        return $this;
+    }
+
+    /**
+     * Get usesource
+     *
+     * @return boolean
+     */
+    public function getUsesource()
+    {
+        return $this->usesource;
+    }
+
+    /**
+     * Set refmedia
+     *
+     * @param \Entities\Media $refmedia
+     *
+     * @return Media
+     */
+    public function setRefmedia(\Entities\Media $refmedia = null)
+    {
+        $this->refmedia = $refmedia;
+
+        return $this;
+    }
+
+    /**
+     * Get refmedia
+     *
+     * @return \Entities\Media
+     */
+    public function getRefmedia()
+    {
+        return $this->refmedia;
+    }
+}
+

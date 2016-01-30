@@ -21,11 +21,18 @@ return array(
 
         "mappings" => array(
             // Using actual filesystem paths
-            array(
+/*            array(
                 "type" => "simple_yml",
                 "namespace" => 'Entities',
                 //"path" => __DIR__."/Entities",
                 "path" => __DIR__."/Resources/config",
+            ),*/
+
+           array(
+                "type" => "annotation",
+                "namespace" => "Entities",
+                "path" => __DIR__."/Entities",
+                //'use_simple_annotation_reader' => false,
             ),
         ),
     ),

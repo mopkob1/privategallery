@@ -1,0 +1,55 @@
+<?php
+
+namespace Entities;
+
+/**
+ * Person
+ */
+class Person
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     */
+    private $adate;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set adate
+     *
+     * @param \DateTime $adate
+     *
+     * @return Person
+     */
+    public function setAdate($adate)
+    {
+        $this->adate = $adate;
+
+        return $this;
+    }
+
+    /**
+     * Get adate
+     *
+     * @return \DateTime
+     */
+    public function getAdate()
+    {
+        return $this->adate;
+    }
+}
+

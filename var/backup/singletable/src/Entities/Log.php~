@@ -1,0 +1,171 @@
+<?php
+
+namespace Entities;
+
+/**
+ * Log
+ */
+class Log
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     */
+    private $adate;
+
+    /**
+     * @var \DateTime
+     */
+    private $atime;
+
+    /**
+     * @var \DateTime
+     */
+    private $adatetime;
+
+    /**
+     * @var string
+     */
+    private $operation;
+
+    /**
+     * @var boolean
+     */
+    private $isdel;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set adate
+     *
+     * @param \DateTime $adate
+     *
+     * @return Log
+     */
+    public function setAdate($adate)
+    {
+        $this->adate = $adate;
+
+        return $this;
+    }
+
+    /**
+     * Get adate
+     *
+     * @return \DateTime
+     */
+    public function getAdate()
+    {
+        return $this->adate;
+    }
+
+    /**
+     * Set atime
+     *
+     * @param \DateTime $atime
+     *
+     * @return Log
+     */
+    public function setAtime($atime)
+    {
+        $this->atime = $atime;
+
+        return $this;
+    }
+
+    /**
+     * Get atime
+     *
+     * @return \DateTime
+     */
+    public function getAtime()
+    {
+        return $this->atime;
+    }
+
+    /**
+     * Set adatetime
+     *
+     * @param \DateTime $adatetime
+     *
+     * @return Log
+     */
+    public function setAdatetime($adatetime)
+    {
+        $this->adatetime = $adatetime;
+
+        return $this;
+    }
+
+    /**
+     * Get adatetime
+     *
+     * @return \DateTime
+     */
+    public function getAdatetime()
+    {
+        return $this->adatetime;
+    }
+
+    /**
+     * Set operation
+     *
+     * @param string $operation
+     *
+     * @return Log
+     */
+    public function setOperation($operation)
+    {
+        $this->operation = $operation;
+
+        return $this;
+    }
+
+    /**
+     * Get operation
+     *
+     * @return string
+     */
+    public function getOperation()
+    {
+        return $this->operation;
+    }
+
+    /**
+     * Set isdel
+     *
+     * @param boolean $isdel
+     *
+     * @return Log
+     */
+    public function setIsdel($isdel)
+    {
+        $this->isdel = $isdel;
+
+        return $this;
+    }
+
+    /**
+     * Get isdel
+     *
+     * @return boolean
+     */
+    public function getIsdel()
+    {
+        return $this->isdel;
+    }
+}
+

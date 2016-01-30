@@ -1,0 +1,29 @@
+Entities\Media:
+    type: entity
+    table: media
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    oneToOne:
+        refmedia:
+            targetEntity: Media
+            
+    fields:
+        path:
+            type: string
+            length: 200
+        name:
+            type: string
+            length: 200
+        mediatype:
+            type: string
+            length: 20
+        isdel:
+            type: boolean
+        usesource:
+            type: boolean
+        #refcaption:
+        #reftag:
+        #refsource:
+        #reflog:

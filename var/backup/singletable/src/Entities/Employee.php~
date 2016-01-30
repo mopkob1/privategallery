@@ -1,0 +1,55 @@
+<?php
+
+namespace Entities;
+
+/**
+ * Employee
+ */
+class Employee
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     */
+    private $qqdate;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set qqdate
+     *
+     * @param \DateTime $qqdate
+     *
+     * @return Employee
+     */
+    public function setQqdate($qqdate)
+    {
+        $this->qqdate = $qqdate;
+
+        return $this;
+    }
+
+    /**
+     * Get qqdate
+     *
+     * @return \DateTime
+     */
+    public function getQqdate()
+    {
+        return $this->qqdate;
+    }
+}
+
