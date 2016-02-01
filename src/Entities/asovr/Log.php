@@ -19,7 +19,7 @@ class Log {
      */
     protected $id = null;
 
-    protected $baseObj;
+    protected $obj;
 
     /**
      * @return mixed
@@ -32,17 +32,17 @@ class Log {
     /**
      * @param mixed $baseObj
      */
-    public function setBaseObj(BaseObj $baseObj)
+    public function setObj(BaseObj $baseObj)
     {
-        $this->baseObj = $baseObj;
+        $this->obj = $baseObj;
     }
 
     /**
      * @return mixed
      */
-    public function getBaseObj()
+    public function getObj()
     {
-        return $this->baseObj;
+        return $this->obj;
     }
 
 

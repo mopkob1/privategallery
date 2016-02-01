@@ -5,7 +5,7 @@ return array(
         'host'     => 'localhost',
         'dbname'   => 'silex',
         'user'     => 'root',
-        'password' => 'ldpa$$',
+        'password' => 'root',
     ),
     "orm.proxies_dir"=> __DIR__ . "/../var/cache/orm/proxy",
     "orm.proxies_namespace" => "DoctrineProxy",

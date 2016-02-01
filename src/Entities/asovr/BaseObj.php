@@ -14,7 +14,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class BaseObj {
     /**
-     * @ManyToOne(targetEntity="Entities\asovr\Log", mappedBy)
+     * @ManyToOne(targetEntity="Entities\asovr\Log", mappedBy="obj")
      * @JoinColumn(name="log_id", referencedColumnName="id")
      */
     protected $logs;
@@ -34,6 +34,6 @@ class BaseObj {
 
     public function addLog(Log $log){
         $this->getLogs()->add($log);
-        $log->setBaseObj($this);
+        $log->setObj($this);
     }
 } 
